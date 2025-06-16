@@ -7,7 +7,8 @@ export const getFlights = async (query) => {
     const allResults = [];
 
     // Fetch all data (max 100 entries per request)
-    const url = `http://localhost:5000/api/flights`;
+    const url = `${process.env.REACT_APP_API_URL}/api/flights`;
+
     const response = await fetch(url);
     const data = await response.json();
 
