@@ -7,7 +7,7 @@ export const getFlights = async (query) => {
     const allResults = [];
 
     // Fetch all data (max 100 entries per request)
-    const url = `${process.env.REACT_APP_API_URL}/api/flights`;
+    const url = `${import.meta.env.VITE_API_URL}/api/flights`;
 
     const response = await fetch(url);
     const data = await response.json();
