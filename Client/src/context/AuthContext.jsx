@@ -1,6 +1,8 @@
 import { createContext, useContext, useState } from "react";
+import { useFlight } from "./FlightContext";
 
 const AuthContext = createContext();
+const { setFlightResults } = useFlight();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(
@@ -25,6 +27,7 @@ const AuthProvider = ({ children }) => {
     setUser("");
     setToken("");
     setRole("");
+    setFlightResults([]);
     // localStorage.clear();
     localStorage.removeItem("user");
     localStorage.removeItem("token");
